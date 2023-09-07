@@ -129,12 +129,6 @@ const Home = () => {
                     fontWeight: "bold",
                 }}
             >
-                <Link to="/store" style={{ color: "white", textDecoration: "none" }}>
-                    <NavigationItem text="Store" link="/store" />
-                </Link>
-                <Link to="/Event" style={{ color: "white", textDecoration: "none" }}>
-                    <NavigationItem text="Event" link="/Event" />
-                </Link>
                 <Link style={{ color: "white", textDecoration: "none" }}>
                     <NavigationItem
                         text="Ngo"
@@ -145,9 +139,16 @@ const Home = () => {
                         ]}
                     />
                 </Link>
+                <Link to="/store" style={{ color: "white", textDecoration: "none" }}>
+                    <NavigationItem text="Store" link="/store" />
+                </Link>
+                <Link to="/Event" style={{ color: "white", textDecoration: "none" }}>
+                    <NavigationItem text="Event" link="/Event" />
+                </Link>
+{/* 
                 <Link to="/residence" style={{ color: "white", textDecoration: "none" }}>
                     <NavigationItem text="Residence" link="/residence" />
-                </Link>
+                </Link> */}
                 <Link to="/post" style={{ color: "white", textDecoration: "none" }}>
                     <NavigationItem text="Post" link="/residence" />
                 </Link>

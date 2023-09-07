@@ -9,6 +9,12 @@ import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import axios from 'axios';
+import Aahamcare1 from "../Image/Aahamcare1.png";
+import Aahamcare2 from "../Image/Aahamcare2.png";
+import Carousel from 'react-material-ui-carousel'
+import { Paper } from '@mui/material';
+import StoreOne from "../Image/StoreOne.jpg";
+import StoreTwo from "../Image/StoreTwo.jpg";
 
 const StoreData = () => {
     const [storeData, setStoreData] = useState([]);
@@ -50,10 +56,69 @@ const StoreData = () => {
         }
     };
 
-    return (
+    function Item(props) {
+        const itemStyle = {
+            backgroundImage: `url(${props.item.image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            textAlign: 'center',
+            color: 'white',
+            padding: '20px',
+            height: '600px',
+        };
+
+        const nameStyle = {
+            fontSize: '50px', // Adjust the font size as needed
+            fontWeight: 'bold',
+            marginBottom: '10px',
+            marginTop: "15%"
+        };
+
+        const descriptionStyle = {
+            fontSize: '16px', // Adjust the font size as needed
+            fontWeight: 'bold'
+        };
+
+        return (
+            <Paper style={itemStyle}>
+                <h2 style={nameStyle}>{props.item.name}</h2>
+                <p style={descriptionStyle}>{props.item.description}</p>
+            </Paper>
+        )
+    }
+
+
+        const items = [
+            {
+                name: "❝" + "Discover a world of endless",
+                description: " possibilities at our store.",
+                image: StoreTwo,
+            },
+            {
+                name: "❝" + "We're not just a store",
+                description: "❝we're your shopping destination",
+                image: StoreOne
+            }
+        ]
+
+
+    return (<>
+        <Carousel
+            autoPlay={true}
+            interval={5000} // Set your desired interval (in milliseconds)
+            animation="slide" // Change to your desired animation type
+            navButtonsAlwaysVisible={true} // Show navigation buttons always
+            indicators={false} // Hide slide indicators
+            height="565px" // Increase the height as needed
+            sx={{marginTop:-9}}
+        >
+            {items.map((item, index) => (
+                <Item key={index} item={item} />
+            ))}
+        </Carousel>
         <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start', gap: '20px', paddingTop: '40px', paddingLeft: '20px' }}>
             {storeData.map((value, index) => (
-                <Card key={index} sx={{ width: 200, borderRadius: 16, overflow: 'hidden' }}>
+                <Card key={index} sx={{ width: 200, borderRadius: 3, overflow: 'hidden' }}>
                     <CardActionArea>
                         <CardMedia
                             component="img"
@@ -80,12 +145,13 @@ const StoreData = () => {
                             </Typography>
                         </CardContent>
                     </CardActionArea>
-                    <Button variant="contained" color="primary" fullWidth sx={{ borderRadius: '0px', borderBottomLeftRadius: '16px', borderBottomRightRadius: '16px' }}>
+                    <Button variant="contained" fullWidth sx={{ borderRadius: '0px', borderBottomLeftRadius: '16px', borderBottomRightRadius: '16px', backgroundColor: 'black' }}>
                         Checkout
                     </Button>
                 </Card>
             ))}
         </Box>
+    </>
     );
 };
 

@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import Alert from '@mui/material/Alert';
 import axios from "axios";
 import { FormControl, FormLabel, Input } from '@mui/material';
+import Aahamcare from "../Image/Aahamcare2.png";
 
 function Sign() {
     const [Username, setUsername] = useState("");
@@ -97,7 +98,8 @@ function Sign() {
             <Container component="main" maxWidth="lg">
                 <Box
                     sx={{
-                        marginTop: 3,
+                        marginTop: -9,
+                        padding:10
                     }}
                 >
                     <Grid container>
@@ -108,7 +110,7 @@ function Sign() {
                             sm={4}
                             md={7}
                             sx={{
-                                backgroundImage: "url(https://source.unsplash.com/random)",
+                                backgroundImage: `url(${Aahamcare})`,
                                 backgroundRepeat: "no-repeat",
                                 backgroundColor: (t) =>
                                     t.palette.mode === "light"
@@ -116,6 +118,7 @@ function Sign() {
                                         : t.palette.grey[900],
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
+                                boxShadow:7
                             }}
                         />
                         <Grid
@@ -191,7 +194,7 @@ function Sign() {
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
                                     <div style={{ marginBottom: '1px' }}>
-                                        <label htmlFor="email" style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '1px' }}>Select Image</label>
+                                        <label htmlFor="email" style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '1px',color:"#969493" }}>Select Image</label>
                                         <input type="file" style={{ width: '100%', padding: '8px', border: '1px solid #ced4da', borderRadius: '4px', fontSize: '14px' }} id="email" defaultValue={UserImage} onChange={(e) => setUserImage(e.target.files)} />
                                     </div>
                                     {/* <FormControlLabel
@@ -202,7 +205,7 @@ function Sign() {
                                         type="submit"
                                         fullWidth
                                         variant="contained"
-                                        sx={{ mt: 3, mb: 2 }}
+                                        sx={{ mt: 3, mb: 2, backgroundColor: "#B040A0" }}
                                     >
                                         Sign Up
                                     </Button>

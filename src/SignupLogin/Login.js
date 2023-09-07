@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import Alert from '@mui/material/Alert';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Aahamcare from "../Image/Aahamcare1.png";
 
 function Login() {
     const [Email, setEmail] = useState("");
@@ -103,7 +104,7 @@ function Login() {
                             sm={4}
                             md={7}
                             sx={{
-                                backgroundImage: "url(https://source.unsplash.com/random)",
+                                backgroundImage: `url(${Aahamcare})`,
                                 backgroundRepeat: "no-repeat",
                                 backgroundColor: (t) =>
                                     t.palette.mode === "light"
@@ -111,6 +112,7 @@ function Login() {
                                         : t.palette.grey[900],
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
+                                boxShadow:7
                             }}
                         />
                         <Grid
@@ -170,7 +172,7 @@ function Login() {
                                         type="submit"
                                         fullWidth
                                         variant="contained"
-                                        sx={{ mt: 3, mb: 2 }}
+                                        sx={{ mt: 3, mb: 2, backgroundColor: "#B040A0" }}
                                     >
                                         Sign In
                                     </Button>
