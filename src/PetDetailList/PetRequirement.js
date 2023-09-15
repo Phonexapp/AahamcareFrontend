@@ -49,10 +49,13 @@ const PetRequirement = (props) => {
     return (
         <>
             <div style={{ height: "400px", overflowY: "auto" }}>
-                <TableContainer component={Paper}>
+                <TableContainer
+                    component={Paper}
+                    style={{ backgroundColor: "#cdeccd" }} // Green background color
+                >
                     <Table>
                         <TableHead>
-                            <TableRow>
+                            <TableRow style={{ backgroundColor: "#4caf50", color: "white" }}> {/* Green header with white text */}
                                 <TableCell>Product</TableCell>
                                 <TableCell>Quantity</TableCell>
                                 <TableCell>Price per Unit</TableCell>
@@ -71,6 +74,7 @@ const PetRequirement = (props) => {
                                                     <Select
                                                         value={cardPriceCounts[requirement.unitPrice] || ""}
                                                         onChange={(e) => handleQuantityChange(e, requirement)}
+                                                        style={{ backgroundColor: "#d4edd4" }} // Light green background for the select
                                                     >
                                                         {[1, 2, 3, 4, 5].map((quantity) => (
                                                             <MenuItem key={quantity} value={quantity}>
@@ -93,7 +97,12 @@ const PetRequirement = (props) => {
                     </Table>
                 </TableContainer>
             </div>
-            <Box display="flex" justifyContent="flex-end" p={2}>
+            <Box
+                display="flex"
+                justifyContent="flex-end"
+                p={2}
+                style={{ backgroundColor: "#4caf50", color: "white" }} // Green background for the bottom box with white text
+            >
                 <Typography variant="h6" sx={{ paddingRight: "20px" }}>
                     Total Amount: ₹{totalAmountSum.toFixed(2)}
                 </Typography>
@@ -103,11 +112,8 @@ const PetRequirement = (props) => {
             </Box>
         </>
     );
-}
+};
 
 export default PetRequirement;
-
-
-
 
 

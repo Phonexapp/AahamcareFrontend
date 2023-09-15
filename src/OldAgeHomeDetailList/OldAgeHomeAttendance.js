@@ -28,14 +28,14 @@ const OldAgeHomeAttendance = (props) => {
                                 height: '280px', // Adjust the height to fit the video
                                 margin: '10px',
                                 backgroundColor: '#fff',
-                                borderRadius: '8px',
                                 boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)', // Add box shadow for a 3D effect
                                 transition: 'transform 0.3s', // Add smooth transition
                                 transformStyle: 'preserve-3d', // Enable 3D transform
                                 cursor: 'pointer', // Show pointer cursor on hover
+                                borderRadius: '10px', // Add border radius
                             }}
                         >
-                            <FrontSide style={{ backgroundColor: '#F3A847', padding: '10px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                            <FrontSide style={{ backgroundColor: '#B040A0', padding: '10px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRadius: '10px' }}>
                                 <Avatar
                                     alt="Remy Sharp"
                                     src={`http://localhost:4000/${residence.photo}`}
@@ -52,8 +52,8 @@ const OldAgeHomeAttendance = (props) => {
                                     </button>
                                 </div>
                             </FrontSide>
-                            <BackSide style={{ backgroundColor: 'black', padding: '10px', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                <video src={`http://localhost:4000/${residence.video}`} style={{ width: '100%', height: '100%', objectFit: 'contain' }} controls></video>
+                            <BackSide style={{ backgroundColor: 'black', padding: '10px', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '10px' }}>
+                                <video src={`http://localhost:4000/${residence.video}`} style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '10px' }} controls></video>
                             </BackSide>
                         </Flippy>
                     ));

@@ -35,7 +35,7 @@ const PetAttendance = (props) => {
                                 cursor: 'pointer', // Show pointer cursor on hover
                             }}
                         >
-                            <FrontSide style={{ backgroundColor: '#F3A847', padding: '10px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                            <FrontSide style={{ backgroundColor: '#B040A0', padding: '10px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRadius: '10px' }}>
                                 <Avatar
                                     alt="Remy Sharp"
                                     src={`http://localhost:4000/${residence.photo}`}
